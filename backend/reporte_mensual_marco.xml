@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+
+ <Styles>
+  <Style ss:ID="Default"><Font ss:FontName="Calibri" ss:Size="10"/></Style>
+  <Style ss:ID="s_header">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Font ss:FontName="Calibri" ss:Bold="1" ss:Color="#FFFFFF" ss:Size="11"/>
+   <Interior ss:Color="#1F497D" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s_weekend">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Font ss:FontName="Calibri" ss:Bold="1" ss:Color="#FFFFFF" ss:Size="11"/>
+   <Interior ss:Color="#C00000" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s_preproject">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
+   <Font ss:FontName="Calibri" ss:Color="#595959" ss:Size="10" ss:Italic="1"/>
+   <Interior ss:Color="#D9D9D9" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s_holiday">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+   <Font ss:FontName="Calibri" ss:Bold="1" ss:Color="#FFFFFF" ss:Size="11"/>
+   <Interior ss:Color="#E26B0A" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s_date">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Font ss:FontName="Calibri" ss:Bold="1" ss:Size="10"/>
+   <Interior ss:Color="#BDD7EE" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s_normal">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Calibri" ss:Size="10"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s_hours">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+   <Font ss:FontName="Calibri" ss:Bold="1" ss:Size="10"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s_revertido">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Font ss:FontName="Calibri" ss:Size="10" ss:Color="#C00000"/>
+   <Interior ss:Color="#FFF2F2" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s_subtotal">
+   <Alignment ss:Horizontal="Right" ss:Vertical="Center"/>
+   <Font ss:FontName="Calibri" ss:Bold="1" ss:Size="10" ss:Color="#1F497D"/>
+   <Interior ss:Color="#DEEAF1" ss:Pattern="Solid"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Reporte Mensual">
+  <Table ss:DefaultRowHeight="15">
+   <Column ss:Width="115"/>
+   <Column ss:Width="230"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="80"/>
+   <Column ss:Width="48"/>
+   <Column ss:Width="290"/>
+   <Column ss:Width="90"/>
+<Row ss:Height="30">
+<Cell ss:StyleID="s_header"><Data ss:Type="String">Fecha</Data></Cell>
+<Cell ss:StyleID="s_header"><Data ss:Type="String">Nombre del Ticket / Actividad</Data></Cell>
+<Cell ss:StyleID="s_header"><Data ss:Type="String">Departamento / Modulo</Data></Cell>
+<Cell ss:StyleID="s_header"><Data ss:Type="String">Status</Data></Cell>
+<Cell ss:StyleID="s_header"><Data ss:Type="String">Horas</Data></Cell>
+<Cell ss:StyleID="s_header"><Data ss:Type="String">Comentarios de Cierre (Bitfarm)</Data></Cell>
+<Cell ss:StyleID="s_header"><Data ss:Type="String">Atendio</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_preproject"><Data ss:Type="String">Miercoles 01/04/2026</Data></Cell>
+<Cell ss:StyleID="s_preproject" ss:MergeAcross="5"><Data ss:Type="String">Sin actividad — Aun no se habia iniciado en este proyecto (incorporacion: 09/04/2026)</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_preproject"><Data ss:Type="String">Jueves 02/04/2026</Data></Cell>
+<Cell ss:StyleID="s_preproject" ss:MergeAcross="5"><Data ss:Type="String">Sin actividad — Aun no se habia iniciado en este proyecto (incorporacion: 09/04/2026)</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_preproject"><Data ss:Type="String">Viernes 03/04/2026</Data></Cell>
+<Cell ss:StyleID="s_preproject" ss:MergeAcross="5"><Data ss:Type="String">Sin actividad — Aun no se habia iniciado en este proyecto (incorporacion: 09/04/2026)</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Sabado 04/04/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Domingo 05/04/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_preproject"><Data ss:Type="String">Lunes 06/04/2026</Data></Cell>
+<Cell ss:StyleID="s_preproject" ss:MergeAcross="5"><Data ss:Type="String">Sin actividad — Aun no se habia iniciado en este proyecto (incorporacion: 09/04/2026)</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_preproject"><Data ss:Type="String">Martes 07/04/2026</Data></Cell>
+<Cell ss:StyleID="s_preproject" ss:MergeAcross="5"><Data ss:Type="String">Sin actividad — Aun no se habia iniciado en este proyecto (incorporacion: 09/04/2026)</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_preproject"><Data ss:Type="String">Miercoles 08/04/2026</Data></Cell>
+<Cell ss:StyleID="s_preproject" ss:MergeAcross="5"><Data ss:Type="String">Sin actividad — Aun no se habia iniciado en este proyecto (incorporacion: 09/04/2026)</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Jueves 09/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Configuracion entorno de desarrollo Maven</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Configuracion / Infraestructura</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Configuracion .gitignore, VSCode launch/settings, credenciales BD via variables de entorno, adicion ext_siniestroauto.xml al sqlMapConfig.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis inicial del codebase y arquitectura ROL</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Configuracion / Infraestructura</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision de estructura, dependencias Maven, capas Spring MVC, seguridad y modulos principales del sistema.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Onboarding y revision de requerimientos pendientes</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Reunion de onboarding, revision del backlog de tickets y configuracion del ambiente de desarrollo.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Viernes 10/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ticket #527 - Diseno pestana Documentos con PDF viewer</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Documentos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Primera iteracion: visor PDF en modal reemplazando descarga directa en pestana Documentos de siniestros auto.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ticket #537 - Fix vista detalle catalogo de clientes</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Catalogos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion inicial de la vista detalle del catalogo de clientes que no cargaba correctamente.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion en ambiente de desarrollo</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales de los cambios en tickets 527 y 537.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis de issues pendientes del backlog</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision y priorizacion de tickets pendientes para la siguiente semana.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Sabado 11/04/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Domingo 12/04/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Lunes 13/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ticket #527 - Rediseno completo pestana Documentos (drag&amp;drop, layout, botones)</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Documentos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">5.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Layout responsive dos columnas 80/20, toggle drag-drop con localStorage, progress bar XHR, 9 botones de acceso rapido, PDF viewer modal y form Gastos rediseado.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ticket #537 - Refinamiento fix catalogo clientes</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Catalogos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ajuste fino de la correccion en vista detalle del catalogo de clientes.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Actualizacion footer ao 2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">UI General</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">0.5</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Cambio del ao en el footer de la aplicacion a 2026.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion de cambios</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.5</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Validacion de tickets 527 y 537 en ambiente QA.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Martes 14/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ticket #534 - Perdida de datos modulo Cabina/Radio al guardar</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Radio / Cabina</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion de bug que borraba datos del modulo Cabina/Radio/Ajuste al guardar desde consulta de siniestro.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ticket #535 - Fix cambiar estatus siniestro a Atendido</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion del flujo para cambiar el estatus de siniestro auto a Atendido.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Performance - Autocomplete queries y cache AuditoriaService</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Rendimiento / General</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Optimizacion de queries autocomplete con LIMIT; cache para consultas information_schema en AuditoriaService.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Performance - Pool Quartz, DBCP2 y fix overlay PDF</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Rendimiento / Infraestructura</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ajuste de thread pool Quartz, maxWaitMillis DBCP2 y correccion de overlay PDF viewer.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion de mejoras de performance</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas de carga y funcionales de las optimizaciones de rendimiento aplicadas.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Miercoles 15/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Enhancement - Galeria de fotos: paginacion server-side, fullscreen, drag-drop</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Galeria</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">6.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Rediseno completo de galeria: paginacion servidor, visor fullscreen, drag&amp;drop UX mejorado y correccion broken pipe en streams de imagenes.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Performance - Loader JMESA antidoble-clic</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Rendimiento / UI</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Adicion de overlay/loader en tablas JMESA para prevenir doble envio por multiples clics.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion de galeria de fotos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales completas de la nueva galeria en distintos navegadores.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Jueves 16/04/2026</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Performance - Optimizar query findLstSiniestrosDanio</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Siniestros / Rendimiento</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Revertido</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Aplanamiento de subquery con SQL_CALC_FOUND_ROWS. Revertido el 24-Abr por impacto no deseado en produccion.</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Enhancement - Modernizacion pantalla de Login</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Seguridad / Login</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Rediseno con animaciones CSS, mejora UX y estandarizacion del logo ROL.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Fix - Aviso de confidencialidad</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Legal / General</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Revertido</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Correccion del aviso de confidencialidad. Revertido el 24-Abr, reemplazado por version HTML inline.</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Performance - Query detalle siniestro (3 requests a 1)</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Rendimiento</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Optimizacion: query de detalle de siniestro reducida de 3 a 1 consulta.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Performance - Eliminar JOIN innecesario en Login</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Seguridad / Rendimiento</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Eliminacion de JOIN redundante en proceso de autenticacion de usuario.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Enhancement - Estandarizar logo ROL en todas las paginas</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">UI General</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Unificacion del tamano del logo ROL a 120-150px en todas las vistas.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Viernes 17/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Enhancement - Login ajustes finales, animaciones y logo</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Seguridad / Login</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ajustes finales al rediseno del login: animaciones, logo estandarizado y compatibilidad cross-browser.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Bug overlay global de UI</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">UI General</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion del overlay global que bloqueaba la interfaz en ciertos flujos de navegacion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Performance - Indices factura.fechaImpresion y cambiosfactura</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Facturacion / Rendimiento</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Revertido</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Creacion de indices para acelerar reportes. Revertido el 24-Abr por impacto no deseado.</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion funcionalidades Login</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas de autenticacion, 2FA y seguridad tras los cambios de login.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision y documentacion de mejoras de rendimiento</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Documentacion de las optimizaciones de performance aplicadas durante la semana.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Reunion de seguimiento semanal</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision del avance semanal y priorizacion de tickets para la siguiente semana.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Sabado 18/04/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Domingo 19/04/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Lunes 20/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis de incidencias reportadas en produccion post-deploy</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion / Soporte</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision y analisis de incidencias post-deploy de la semana anterior en ambiente de produccion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion de funcionalidades entregadas semana anterior</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas de regresion de modulos: Login, Galeria, Documentos, Siniestros.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Reunion de seguimiento y planeacion de sprint</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision de backlog, asignacion de prioridades y estimacion de nuevos tickets.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Martes 21/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis detallado de bugs en modulo Facturacion (redondeo IVA)</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Facturacion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">4.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Investigacion del problema de redondeo de IVA: causa raiz, impacto en registros existentes y diseno de solucion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision de ambiente QA y preparacion de casos de prueba</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Preparacion del ambiente QA y definicion de casos de prueba para los fixes de facturacion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Documentacion de cambios y actualizacion de tickets</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Actualizacion de estado de tickets y documentacion del analisis realizado.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Miercoles 22/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Restaurar marcar/eliminar documentos pestana Documentos (sync QA-Prod)</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Documentos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Restauracion de funcionalidad para marcar y eliminar documentos, afectada por diferencia entre QA y produccion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Enhancement - UX subida de fotos (error handling, retry, toast, PNG)</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Galeria</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Mejora en carga de fotos: manejo de errores, reintentos automaticos, notificaciones toast y soporte PNG.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Aviso de privacidad HTML inline</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Legal / General</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Sustitucion del PDF viewer del aviso de privacidad por texto HTML inline para mejor compatibilidad.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion en ambiente QA</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales de los tres fixes entregados.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Jueves 23/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion exhaustiva de fixes (documentos, fotos, aviso)</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas de regresion completas de modulos Documentos, Galeria y aviso de privacidad modificados el dia anterior.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis del problema de redondeo IVA en facturas existentes</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Facturacion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Alcance del problema: cuantas facturas afectadas y diseno del stored procedure de correccion masiva.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Soporte a usuarios con incidencias reportadas</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion / Soporte</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Atencion de incidencias de usuarios en modulos de Siniestros y Facturacion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Viernes 24/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Redondeo correcto de IVA usando subtotal x tasa</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Facturacion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion del calculo de IVA para evitar errores de centavos; cambio de formula de calculo.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Migration - SP correccion masiva de errores de redondeo IVA</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Facturacion / Base de Datos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Stored procedure para corregir en lote los errores de redondeo en facturas existentes.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Lazy-load URL siniestro en detalle de factura</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Facturacion / Siniestros</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion de loop de requests al cargar URL de siniestro desde el detalle de factura.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion de reverts y analisis de impacto en produccion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion / Infraestructura</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Reversion de 5 commits de performance (N+1, Excel sesion, indices, findLstSiniestrosDanio, aviso) por impacto en produccion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Restaurar aviso de privacidad afectado por revert</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Legal / General</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Restauracion del aviso de privacidad HTML inline afectado por los reverts masivos.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Sabado 25/04/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Domingo 26/04/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Lunes 27/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Mostrar campo fecha inicio atencion radio en consulta siniestro</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Radio</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion de visibilidad del campo Fecha Inicio Atencion Radio en consulta de siniestro general.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis de requerimientos: ordenamiento y exportacion de remesas</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis del requerimiento de ordenamiento de remesas y diseno de solucion para tabla y exportacion Excel.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion de fixes activos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas de modulos Radio, Facturacion y Siniestros tras los ultimos cambios.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Reunion de seguimiento y revision de prioridades</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision de avance, ajuste de prioridades y planeacion de tickets de la semana.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Martes 28/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Unir PDF + IMG en pestana Documentos de siniestro</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Documentos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Habilitacion de union de documentos PDF e imagenes; remocion de permiso obsoleto de app context.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Fix - Mejora a query de consulta general de siniestros</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Siniestros</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Revertido</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Optimizacion de query de consulta general. Revertido el 30-Abr por comportamiento inesperado.</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion de cambios en QA</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales de cambios en documentos y consulta general.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Miercoles 29/04/2026</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Fix - Filtros server-side en tabla de siniestros dano</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Siniestros</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Revertido</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">5.0</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Implementacion de filtros del lado del servidor en tabla siniestros dano. Revertido el 30-Abr.</Data></Cell>
+<Cell ss:StyleID="s_revertido"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing, validacion y analisis de impacto de filtros</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas exhaustivas de filtros y analisis de impacto en queries existentes.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision de codigo con equipo tecnico</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Code review de los cambios implementados con el equipo.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Jueves 30/04/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Reverts - Query consulta general y filtros siniestro dano</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Reversion de commits de consulta general y filtros server-side siniestro dano por impacto en produccion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Ordenar Excel de remesa (mas antiguo a mas reciente)</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Cobranza / Remesa</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion del orden en exportacion Excel de remesas para mostrar de antiguo a nuevo.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis de causa raiz de regresiones en siniestros</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion / Soporte</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Investigacion de la causa raiz de los problemas que motivaron los reverts del modulo siniestros.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Documentacion, reporte de incidencias y reunion mensual</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Documentacion de incidencias, cierre de mes y reunion mensual de seguimiento.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_holiday"><Data ss:Type="String">Viernes 01/05/2026</Data></Cell>
+<Cell ss:StyleID="s_holiday" ss:MergeAcross="5"><Data ss:Type="String">DIA FESTIVO — Dia del Trabajo (01 de Mayo)</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Sabado 02/05/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Domingo 03/05/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Lunes 04/05/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis y diseno de mejoras para galeria de fotos (carpeta por defecto)</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Galeria</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis de requerimiento y diseno de solucion para auto-crear carpeta por defecto y rediseno UX galeria.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision de requerimientos pendientes y planeacion de sprint</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision del backlog, planeacion de actividades de la semana y asignacion de prioridades.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing de funcionalidades entregadas en semanas anteriores</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas de regresion de modulos Galeria, Remesa, Siniestros y Cabina/Radio.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Soporte a usuarios con incidencias activas</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion / Soporte</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Atencion de dudas e incidencias de usuarios en ambiente de produccion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Martes 05/05/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Ordenar tabla e impresion de remesa por fecha ASC</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Cobranza / Remesa</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion del ordenamiento ascendente por fecha en tabla de remesa y su version de impresion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Mejora - Auto-crear carpeta por defecto y rediseno UX galeria</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Galeria</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Creacion automatica de carpeta por defecto si no existe; rediseno de UX de la galeria con mejoras visuales.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Deshabilitar campo fecha inicio atencion radio</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Radio / Cabina</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion del campo fecha inicio atencion radio segun permisos en modulos siniestro y cabina/radio.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Sincronizar contador seleccion galeria con marcar/desmarcar todas</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Galeria</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion del contador de fotos seleccionadas al usar Marcar todas / Desmarcar todas.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion de cambios del dia</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales de remesa, galeria y radio.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Miercoles 06/05/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Activar boton fecha entrega expediente al capturar fecha recepcion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Eliminacion del paso manual de clic en Modificar: el boton de fecha entrega se activa automaticamente via JS.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion del fix de fecha expediente</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas del fix en distintos perfiles de usuario (con y sin permiso Administrador General).</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis de requerimientos pendientes</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision y analisis de requerimientos pendientes en el backlog.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Soporte y revision de incidencias activas</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion / Soporte</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Atencion de incidencias de usuarios y revision de problemas reportados.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Reunion de seguimiento</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Reunion de seguimiento de avance y prioridades con el equipo.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Jueves 07/05/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ticket #502 - Cancelacion de remesas vacias con permiso y mejoras UX</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Cobranza / Remesa</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Implementacion de cancelacion de remesas vacias condicionada a permiso; mejoras de UX en el flujo de remesas.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ticket #550 - Rediseno UX pantalla de asignacion de permisos por perfil</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Seguridad / Permisos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Rediseno completo de la pantalla de asignacion de permisos por perfil; fix de compatibilidad jQuery 1.4.2 usando .attr() en lugar de .data().</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Reparar stored procedure de ajuste de IVA</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Facturacion / Base de Datos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion del stored procedure de ajuste masivo de IVA que fallaba en ciertos escenarios de ejecucion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion de cambios del dia</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales de remesas, permisos y correccion de IVA.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Viernes 08/05/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">feat - Paginas de error 404/500 con diseno personalizado</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">UI General</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Creacion de paginas de error 404 y 500 con diseno personalizado consistente con el resto de la aplicacion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Priorizar empleado sobre ajustador en carga automatica de facturas por correo</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Facturacion / Correo</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion de la logica de prioridad al cargar facturas automaticamente por correo: empleado toma precedencia sobre ajustador.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis de requerimientos pendientes</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revision y priorizacion de requerimientos pendientes en el backlog para la siguiente semana.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing, validacion y reunion de seguimiento semanal</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Gestion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales de paginas de error y correo-facturas; reunion de cierre de semana.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Sabado 09/05/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="22">
+<Cell ss:StyleID="s_weekend"><Data ss:Type="String">Domingo 10/05/2026</Data></Cell>
+<Cell ss:StyleID="s_weekend" ss:MergeAcross="5"><Data ss:Type="String">FIN DE SEMANA</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Lunes 11/05/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Revertir disabled en cabina/radio y ocultar campo en siniestro</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Radio / Cabina</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Reversion del disabled en campos de cabina/radio; campo fecha inicio atencion oculto en vista de siniestro segun configuracion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Continuar subida por lotes al completar cada batch en Dropzone</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Galeria</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion del flujo de subida por lotes en Dropzone: al completar cada batch la cola continua procesando el siguiente grupo de fotos.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Soporte y revision de incidencias activas</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Gestion / Soporte</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Atencion de incidencias reportadas por usuarios y revision de problemas activos en produccion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion de cambios del dia</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales de cabina/radio y subida de fotos por lotes.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Martes 12/05/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Galeria fotos: crear carpeta al dar click con nombre de folio y mostrar conteo de fotos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Galeria</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.5</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Ajuste en CarpetaFotoController para crear carpeta con nombre de folio al dar click; se agrega conteo de fotos en la vista edit_carpetas.jsp.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Formatos visor PDF/Word, Dropzone con overlay verde y autoclose en siniestro auto y danio</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Visor / Dropzone</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">3.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Correccion de formatos en visor de documentos PDF y Word; Dropzone con overlay verde al arrastrar archivos y cierre automatico al finalizar la carga en siniestro auto y danio.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Agregar columna Reporte Compania en listados de autos (list.html y listAutos.html)</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestros / Consulta</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.5</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Se agrega la columna reporteCompania entre Numero de Siniestro y Compania de Seguros en las tablas JMesa de listAutos.html y list.html, con soporte de filtrado en ambas vistas.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion de cambios del dia</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales de galeria de fotos, visor de documentos, Dropzone y columna Reporte Compania en listados.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Miercoles 13/05/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Investigacion y diagnostico - Detalle factura vacio en facturas de ajustador/empleado por correo</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Facturacion / Correo</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Analisis del flujo ProccessMailFacturaProveedor e InvoiceService. Identificacion del loop de prioridad en listPersonas y su relacion con el campo persona en parametrostarea. Creacion de XML de prueba CFDI 4.0 para RFC SOAA710327CN4 (ajustador+empleado). Verificacion local: concepto=1290234 (Nomina) insertado correctamente en detallefacturaproveedor.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Bug SQL NOT IN vacio en findImpuestos (ext_impuesto.xml)</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Facturacion / Impuestos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">0.5</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Cambio de isNotNull a isNotEmpty en la query findImpuestos de ext_impuesto.xml para evitar SQL invalido NOT IN () cuando el XML tiene ObjetoImp=01 (sin impuestos).</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Diagnostico y resolucion del bug en produccion - Quartz JobDataMap con parametros desactualizados</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Facturacion / Produccion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">4.5</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Identificacion de que los triggers TAREA-640, TAREA-662, TAREA-663 creados en 2025 tenian los parametros serializados con el orden antiguo (proveedor,ajustador,empleado) en qrtz_job_details. La migracion de BD y el codigo ya estaban correctos en prod pero Quartz nunca se reprogramo. Solucion: re-programacion de las 3 tareas de procesamiento de correos (Fact. Proveedores, Fact. Proveedores Danos, Fact. Proveedores BBC Mex) desde el UI de administracion. Nuevos triggers TAREA-738, TAREA-739, TAREA-740 creados con parametros actualizados (empleado,proveedor,ajustador).</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testing y validacion del fix en local y seguimiento en produccion</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales del flujo completo de correo con XML real de ajustador/empleado. Verificacion de detalle factura con concepto Nomina en mesaControl. Confirmacion de triggers activos en produccion.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_date"><Data ss:Type="String">Jueves 14/05/2026</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testeo en QA - Validación de build anterior y detección de defectos en galería de fotos y visor de formato siniestro</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.5</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revisión del ambiente QA con el build desplegado. Identificación de defecto en conteo de fotos por carpeta (mostraba valor incorrecto) y error de autodiscovery en Dropzone al cargar visor de formato en siniestro auto y daño. Documentación de pasos de reproducción para ambos issues.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Testeo local y validación de fixes - Carpetas foto y Dropzone en siniestro auto y daño</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">QA / Testing</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.5</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Pruebas funcionales en ambiente local de los dos fixes implementados: verificación de conteo correcto de fotos por carpeta en galería, e inicialización manual de Dropzone sin errores de consola en visor de formato. Validación de flujo completo de subida de fotos y descarga de documentos.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Conteo real de fotos por carpeta en galería</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestro / Galería de Fotos</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">1.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Modificación de ext_carpeta.xml para corregir la query de conteo de fotos por carpeta, mostrando el total real en lugar de un valor fijo o incorrecto.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Fix - Inicializar Dropzone manualmente para evitar error autodiscovery en formato siniestro</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestro / Formato</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Completado</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Refactoring de formato.jsp para eliminar la inicialización automática de Dropzone (autodiscovery) y reemplazarla por inicialización manual controlada, evitando el error de elementos no encontrados al cargar la página.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="45">
+<Cell ss:StyleID="s_normal"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Análisis - Soporte: Fechas de entrada y salida de expediente no se reflejan en mensajes</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Siniestro / Mensajería</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">En análisis</Data></Cell>
+<Cell ss:StyleID="s_hours"><Data ss:Type="Number">2.0</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Revisión del flujo completo: botón ingresaFecha → saveCampo.html (SiniestroController) → SiniestroService.saveCampo → mensajeriaService.guardarMensaje. Identificación de dos rutas: (1) guardado individual por botón, (2) guardado por submit completo de tab vía notificarCambioFechasExpediente. Hallazgo clave: guardarMensaje silently skips si idTag==null; refreshMessageForced() llama addMessageToAddModal (panel incorrecto); posible duplicidad de id HTML entre form:hidden y form:input del mismo path. Bug intermitente: posible race condition en jQuery 1.4.2 o uso del panel de mensajes equivocado en la actualización.</Data></Cell>
+<Cell ss:StyleID="s_normal"><Data ss:Type="String">Marco Lopez</Data></Cell>
+</Row>
+<Row ss:Height="16">
+<Cell ss:StyleID="s_subtotal" ss:MergeAcross="6"><Data ss:Type="String">TOTAL DIA: 8.0 h</Data></Cell>
+</Row>
+  </Table>
+ </Worksheet>
+</Workbook>

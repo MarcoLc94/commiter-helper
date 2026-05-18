@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="8" fill="#1e3a5f"/>
+  <!-- línea horizontal del grafo -->
+  <line x1="2" y1="16" x2="30" y2="16" stroke="#7eb8e8" stroke-width="2.5"/>
+  <!-- círculo del commit -->
+  <circle cx="16" cy="16" r="5.5" fill="#1e3a5f" stroke="#7eb8e8" stroke-width="2.5"/>
+  <circle cx="16" cy="16" r="2.5" fill="#7eb8e8"/>
+</svg>

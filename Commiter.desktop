@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Commiter
+Comment=Reportes de commits git
+Exec=konsole --noclose -e bash -c "cd /home/bitfarm/Documentos/commiter && ./start.sh"
+Icon=utilities-terminal
+Terminal=false
+Categories=Development;
