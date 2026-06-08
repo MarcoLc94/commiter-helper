@@ -1,7 +1,9 @@
 import { useState } from "react"
 import { Sidebar } from "./components/Sidebar"
 import { ReportTable } from "./components/ReportTable"
-import { fetchCommits, exportReport } from "./api/client"
+import { ReportHistory } from "./components/ReportHistory"
+import { SaveModal } from "./components/SaveModal"
+import { fetchCommits, exportReport, fetchSavedReport, createSavedReport, updateSavedReport } from "./api/client"
 import type { DayReport } from "./types"
 
 const MONTHS_ES = [
@@ -9,8 +11,16 @@ const MONTHS_ES = [
   "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",
 ]
 
+type View = "generator" | "history"
+
+interface LoadedReport {
+  id: number
+  name: string
+}
+
 export default function App() {
   const now = new Date()
+  const [view, setView] = useState<View>("generator")
   const [config, setConfig] = useState({
     repoPath: "",
     year: now.getFullYear(),
@@ -18,18 +28,27 @@ export default function App() {
     author: "marco",
   })
   const [days, setDays] = useState<DayReport[]>([])
+  const [loadedReport, setLoadedReport] = useState<LoadedReport | null>(null)
   const [loading, setLoading] = useState(false)
   const [exporting, setExporting] = useState(false)
+  const [saving, setSaving] = useState(false)
   const [error, setError] = useState("")
+  const [showSaveModal, setShowSaveModal] = useState(false)
 
   function handleChange(field: string, value: string | number) {
     setConfig((prev) => ({ ...prev, [field]: value }))
+  }
+
+  function handleViewChange(v: View) {
+    setView(v)
+    setError("")
   }
 
   async function handleGenerate() {
     if (!config.repoPath) return
     setLoading(true)
     setError("")
+    setLoadedReport(null)
     try {
       const data = await fetchCommits(config.repoPath, config.year, config.month, config.author)
       setDays(data)
@@ -37,6 +56,65 @@ export default function App() {
       setError(e instanceof Error ? e.message : "Error desconocido")
     } finally {
       setLoading(false)
+    }
+  }
+
+  async function handleLoadSaved(id: number) {
+    setLoading(true)
+    setError("")
+    try {
+      const detail = await fetchSavedReport(id)
+      setDays(detail.days)
+      setConfig((prev) => ({
+        ...prev,
+        repoPath: detail.repo_path || prev.repoPath,
+        author: detail.author || prev.author,
+        year: detail.year,
+        month: detail.month,
+      }))
+      setLoadedReport({ id: detail.id, name: detail.name })
+      setView("generator")
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Error al cargar reporte")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  function defaultReportName() {
+    return `Reporte ${MONTHS_ES[config.month]} ${config.year}`
+  }
+
+  async function handleSaveConfirm(name: string) {
+    setShowSaveModal(false)
+    setSaving(true)
+    setError("")
+    try {
+      if (loadedReport) {
+        await updateSavedReport(loadedReport.id, {
+          name,
+          repo_path: config.repoPath,
+          author: config.author,
+          year: config.year,
+          month: config.month,
+          days,
+        })
+        setLoadedReport({ ...loadedReport, name })
+      } else {
+        const result = await createSavedReport({
+          name,
+          repo_path: config.repoPath,
+          author: config.author,
+          year: config.year,
+          month: config.month,
+          days,
+        })
+        setLoadedReport({ id: result.id, name: result.name })
+      }
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Error al guardar")
+    } finally {
+      setSaving(false)
     }
   }
 
@@ -79,14 +157,22 @@ export default function App() {
     (d) => d.day_type === "workday" && d.activities.length > 0
   ).length
 
+  const headerTitle = loadedReport
+    ? loadedReport.name
+    : days.length > 0
+      ? `Reporte ${MONTHS_ES[config.month]} ${config.year}`
+      : "Sin reporte generado"
+
   return (
     <div className="flex h-screen overflow-hidden bg-slate-100">
       <Sidebar
+        view={view}
         repoPath={config.repoPath}
         year={config.year}
         month={config.month}
         author={config.author}
         loading={loading}
+        onViewChange={handleViewChange}
         onChange={handleChange}
         onGenerate={handleGenerate}
       />
@@ -96,23 +182,36 @@ export default function App() {
         <header className="bg-white border-b border-slate-200 px-6 py-3 flex items-center justify-between shadow-sm">
           <div>
             <h2 className="font-semibold text-slate-700 text-base">
-              {days.length > 0
-                ? `Reporte ${MONTHS_ES[config.month]} ${config.year}`
-                : "Sin reporte generado"}
+              {view === "history" ? "Historial de reportes" : headerTitle}
             </h2>
-            {days.length > 0 && (
+            {view === "generator" && days.length > 0 && (
               <p className="text-xs text-slate-400">
                 {workDays} días trabajados · {totalHours.toFixed(1)} horas totales
+                {loadedReport && (
+                  <span className="ml-2 text-blue-500">· guardado en DB</span>
+                )}
               </p>
             )}
           </div>
-          <button
-            onClick={handleExport}
-            disabled={days.length === 0 || exporting}
-            className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-500 disabled:bg-slate-300 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-lg transition-colors"
-          >
-            {exporting ? "Exportando..." : "Exportar Excel"}
-          </button>
+
+          {view === "generator" && days.length > 0 && (
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setShowSaveModal(true)}
+                disabled={saving}
+                className="flex items-center gap-2 px-4 py-2 bg-slate-700 hover:bg-slate-600 disabled:bg-slate-300 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-lg transition-colors"
+              >
+                {saving ? "Guardando..." : loadedReport ? "Actualizar reporte" : "Guardar reporte"}
+              </button>
+              <button
+                onClick={handleExport}
+                disabled={exporting}
+                className="flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-500 disabled:bg-slate-300 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-lg transition-colors"
+              >
+                {exporting ? "Exportando..." : "Exportar Excel"}
+              </button>
+            </div>
+          )}
         </header>
 
         {error && (
@@ -122,11 +221,23 @@ export default function App() {
         )}
 
         <main className="flex-1 overflow-auto p-4">
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            <ReportTable days={days} onChange={setDays} onExportDay={handleExportDay} />
-          </div>
+          {view === "history" ? (
+            <ReportHistory onLoad={handleLoadSaved} />
+          ) : (
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <ReportTable days={days} onChange={setDays} onExportDay={handleExportDay} />
+            </div>
+          )}
         </main>
       </div>
+
+      {showSaveModal && (
+        <SaveModal
+          defaultName={loadedReport ? loadedReport.name : defaultReportName()}
+          onConfirm={handleSaveConfirm}
+          onCancel={() => setShowSaveModal(false)}
+        />
+      )}
     </div>
   )
 }
