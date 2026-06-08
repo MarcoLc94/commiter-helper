@@ -10,6 +10,8 @@ class Activity(BaseModel):
     hours: float = 1.0
     comments: str = ""
     author: str = ""
+    fd_ticket: Optional[str] = None
+    tag: Optional[str] = None
 
 
 class DayReport(BaseModel):

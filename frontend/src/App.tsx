@@ -3,8 +3,12 @@ import { Sidebar } from "./components/Sidebar"
 import { ReportTable } from "./components/ReportTable"
 import { ReportHistory } from "./components/ReportHistory"
 import { SaveModal } from "./components/SaveModal"
-import { fetchCommits, exportReport, fetchSavedReport, createSavedReport, updateSavedReport } from "./api/client"
+import { fetchCommits, exportReport, exportReportV2, fetchSavedReport, createSavedReport, updateSavedReport } from "./api/client"
 import type { DayReport } from "./types"
+
+function daySignature(d: DayReport): string {
+  return d.activities.map(a => `${a.ticket ?? ""}|${a.activity}|${a.hours}`).join("||")
+}
 
 const MONTHS_ES = [
   "", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
@@ -31,9 +35,11 @@ export default function App() {
   const [loadedReport, setLoadedReport] = useState<LoadedReport | null>(null)
   const [loading, setLoading] = useState(false)
   const [exporting, setExporting] = useState(false)
+  const [exportingV2, setExportingV2] = useState(false)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState("")
   const [showSaveModal, setShowSaveModal] = useState(false)
+  const [pendingUpdates, setPendingUpdates] = useState<Map<string, DayReport>>(new Map())
 
   function handleChange(field: string, value: string | number) {
     setConfig((prev) => ({ ...prev, [field]: value }))
@@ -48,15 +54,50 @@ export default function App() {
     if (!config.repoPath) return
     setLoading(true)
     setError("")
-    setLoadedReport(null)
     try {
-      const data = await fetchCommits(config.repoPath, config.year, config.month, config.author)
-      setDays(data)
+      const freshData = await fetchCommits(config.repoPath, config.year, config.month, config.author)
+
+      if (loadedReport && days.length > 0) {
+        // Smart merge: sólo reemplazar días que el usuario apruebe
+        const pending = new Map<string, DayReport>()
+        for (const freshDay of freshData) {
+          if (freshDay.day_type !== "workday") continue
+          const existing = days.find(d => d.date === freshDay.date)
+          if (existing && daySignature(existing) !== daySignature(freshDay)) {
+            pending.set(freshDay.date, freshDay)
+          }
+        }
+        setPendingUpdates(pending)
+      } else {
+        setDays(freshData)
+        setLoadedReport(null)
+        setPendingUpdates(new Map())
+      }
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : "Error desconocido")
     } finally {
       setLoading(false)
     }
+  }
+
+  function handleAcceptUpdate(date: string) {
+    const newDay = pendingUpdates.get(date)
+    if (!newDay) return
+    setDays(prev => prev.map(d => d.date === date ? newDay : d))
+    setPendingUpdates(prev => { const next = new Map(prev); next.delete(date); return next })
+  }
+
+  function handleDeclineUpdate(date: string) {
+    setPendingUpdates(prev => { const next = new Map(prev); next.delete(date); return next })
+  }
+
+  function handleAcceptAllUpdates() {
+    setDays(prev => prev.map(d => pendingUpdates.get(d.date) ?? d))
+    setPendingUpdates(new Map())
+  }
+
+  function handleDeclineAllUpdates() {
+    setPendingUpdates(new Map())
   }
 
   async function handleLoadSaved(id: number) {
@@ -141,6 +182,20 @@ export default function App() {
     }
   }
 
+  async function handleExportV2() {
+    if (days.length === 0) return
+    setExportingV2(true)
+    try {
+      const sheetName = `Reporte ${MONTHS_ES[config.month]} ${config.year}`
+      const blob = await exportReportV2(days, sheetName)
+      await downloadBlob(blob, `reporte_tags_${config.year}_${String(config.month).padStart(2, "0")}.xlsx`)
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Error al exportar v2")
+    } finally {
+      setExportingV2(false)
+    }
+  }
+
   async function handleExportDay(day: DayReport) {
     try {
       const [y, m, d] = day.date.split("-")
@@ -210,6 +265,13 @@ export default function App() {
               >
                 {exporting ? "Exportando..." : "Exportar Excel"}
               </button>
+              <button
+                onClick={handleExportV2}
+                disabled={exportingV2}
+                className="flex items-center gap-2 px-4 py-2 bg-teal-600 hover:bg-teal-500 disabled:bg-slate-300 disabled:cursor-not-allowed text-white text-sm font-semibold rounded-lg transition-colors"
+              >
+                {exportingV2 ? "Exportando..." : "Exportar Por Tags"}
+              </button>
             </div>
           )}
         </header>
@@ -225,7 +287,16 @@ export default function App() {
             <ReportHistory onLoad={handleLoadSaved} />
           ) : (
             <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-              <ReportTable days={days} onChange={setDays} onExportDay={handleExportDay} />
+              <ReportTable
+                  days={days}
+                  onChange={setDays}
+                  onExportDay={handleExportDay}
+                  pendingUpdates={pendingUpdates}
+                  onAcceptUpdate={handleAcceptUpdate}
+                  onDeclineUpdate={handleDeclineUpdate}
+                  onAcceptAllUpdates={handleAcceptAllUpdates}
+                  onDeclineAllUpdates={handleDeclineAllUpdates}
+                />
             </div>
           )}
         </main>

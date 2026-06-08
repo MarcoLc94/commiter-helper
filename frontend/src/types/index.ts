@@ -6,6 +6,8 @@ export interface Activity {
   hours: number
   comments: string
   author: string
+  fd_ticket?: string
+  tag?: string
 }
 
 export interface DayReport {

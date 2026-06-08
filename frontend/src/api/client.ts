@@ -38,6 +38,19 @@ export async function exportReport(
   return res.blob()
 }
 
+export async function exportReportV2(
+  days: DayReport[],
+  sheetName: string
+): Promise<Blob> {
+  const res = await fetch(`${BASE}/export-v2`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ days, sheet_name: sheetName }),
+  })
+  if (!res.ok) throw new Error("Error al exportar v2")
+  return res.blob()
+}
+
 export async function fetchSavedReports(): Promise<SavedReportSummary[]> {
   const res = await fetch(`${BASE}/saved-reports`)
   if (!res.ok) throw new Error("Error al cargar historial")

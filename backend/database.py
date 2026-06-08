@@ -53,6 +53,8 @@ class SavedActivity(Base):
     hours = Column(Float, default=1.0)
     comments = Column(Text, default="")
     author = Column(String, default="")
+    fd_ticket = Column(String, nullable=True)
+    tag = Column(String, nullable=True)
     day = relationship("SavedDay", back_populates="activities")
 
 
@@ -66,3 +68,14 @@ def get_db():
 
 def create_tables():
     Base.metadata.create_all(bind=engine)
+
+
+def migrate_tables():
+    from sqlalchemy import text
+    with engine.connect() as conn:
+        try:
+            conn.execute(text("ALTER TABLE saved_activities ADD COLUMN IF NOT EXISTS fd_ticket VARCHAR"))
+            conn.execute(text("ALTER TABLE saved_activities ADD COLUMN IF NOT EXISTS tag VARCHAR"))
+            conn.commit()
+        except Exception:
+            conn.rollback()

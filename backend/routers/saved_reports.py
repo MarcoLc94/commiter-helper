@@ -64,6 +64,8 @@ def get_saved_report(report_id: int, db: Session = Depends(get_db)):
                         "hours": a.hours,
                         "comments": a.comments,
                         "author": a.author,
+                        "fd_ticket": a.fd_ticket,
+                        "tag": a.tag,
                     }
                     for a in d.activities
                 ],
@@ -139,4 +141,6 @@ def _persist_days(db: Session, report_id: int, days: list[DayReport]):
                 hours=a.hours,
                 comments=a.comments,
                 author=a.author,
+                fd_ticket=a.fd_ticket,
+                tag=a.tag,
             ))

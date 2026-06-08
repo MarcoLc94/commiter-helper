@@ -1,4 +1,5 @@
 import io
+from collections import defaultdict
 from datetime import date as date_type
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font, Alignment
@@ -43,7 +44,7 @@ def style_row(ws, row_num: int, bg: str, fg: str, bold: bool, h_align: str, valu
         cell.font = font(bold=bold, color=fg)
         cell.alignment = align(h=h_align, v="center", wrap=False)
     if merge_from:
-        ws.merge_cells(start_row=row_num, start_column=merge_from, end_row=row_num, end_column=7)
+        ws.merge_cells(start_row=row_num, start_column=merge_from, end_row=row_num, end_column=len(values))
 
 
 def sanitize_sheet_name(name: str) -> str:
@@ -58,14 +59,14 @@ def generate_excel(request: ReportRequest) -> io.BytesIO:
     ws = wb.active
     ws.title = sanitize_sheet_name(request.sheet_name)
 
-    col_widths = [16, 32, 20, 12, 7, 40, 13]
+    col_widths = [16, 32, 20, 12, 7, 40, 13, 14]
     for i, w in enumerate(col_widths, 1):
         ws.column_dimensions[get_column_letter(i)].width = w
 
     # Header
     ws.row_dimensions[1].height = 30
     headers = ["Fecha", "Nombre del Ticket / Actividad", "Departamento / Modulo",
-               "Status", "Horas", "Comentarios de Cierre", "Atendio"]
+               "Status", "Horas", "Comentarios de Cierre", "Atendio", "Nº Ticket Soporte"]
     for col, h in enumerate(headers, 1):
         cell = ws.cell(row=1, column=col, value=h)
         cell.fill = fill(C_HEADER_BG)
@@ -79,13 +80,13 @@ def generate_excel(request: ReportRequest) -> io.BytesIO:
         if day.day_type == "weekend":
             ws.row_dimensions[r].height = 22
             style_row(ws, r, C_WEEKEND_BG, C_WEEKEND_FG, True, "center",
-                      [label, "FIN DE SEMANA", "", "", "", "", ""], merge_from=2)
+                      [label, "FIN DE SEMANA", "", "", "", "", "", ""], merge_from=2)
 
         elif day.day_type == "holiday":
             ws.row_dimensions[r].height = 22
             holiday_label = day.activities[0].activity.upper() if day.activities else "DIA FESTIVO"
             style_row(ws, r, C_HOLIDAY_BG, C_HOLIDAY_FG, True, "center",
-                      [label, holiday_label, "", "", "", "", ""], merge_from=2)
+                      [label, holiday_label, "", "", "", "", "", ""], merge_from=2)
 
         elif day.day_type == "workday":
             if not day.activities:
@@ -93,7 +94,7 @@ def generate_excel(request: ReportRequest) -> io.BytesIO:
                 ws.cell(row=r, column=1, value=label).fill = fill(C_DATE_BG)
                 ws.cell(row=r, column=1).font = font(bold=True)
                 ws.cell(row=r, column=1).alignment = align(h="center", v="center")
-                for col in range(2, 8):
+                for col in range(2, 9):
                     c = ws.cell(row=r, column=col, value="")
                     c.fill = fill(C_WHITE)
                     c.font = font()
@@ -120,6 +121,7 @@ def generate_excel(request: ReportRequest) -> io.BytesIO:
                         (5, activity.hours, True, "center"),
                         (6, activity.comments, False, "left"),
                         (7, activity.author, False, "left"),
+                        (8, activity.fd_ticket or "", False, "center"),
                     ]
                     for col, val, bold, h in cells:
                         c = ws.cell(row=row_num, column=col, value=val)
@@ -134,7 +136,61 @@ def generate_excel(request: ReportRequest) -> io.BytesIO:
                 sc.fill = fill(C_SUBTOTAL_BG)
                 sc.font = font(bold=True, color=C_SUBTOTAL_FG)
                 sc.alignment = align(h="right", v="center", wrap=False)
-                ws.merge_cells(start_row=sub_r, start_column=1, end_row=sub_r, end_column=7)
+                ws.merge_cells(start_row=sub_r, start_column=1, end_row=sub_r, end_column=8)
+
+    buf = io.BytesIO()
+    wb.save(buf)
+    buf.seek(0)
+    return buf
+
+
+def generate_excel_v2(request: ReportRequest) -> io.BytesIO:
+    # Recolectar actividades con tag, agrupadas por tag
+    # Estructura: {tag: [(date_str, activity), ...]}
+    by_tag: dict[str, list[tuple[str, object]]] = defaultdict(list)
+
+    for day in request.days:
+        for activity in day.activities:
+            if activity.tag:
+                by_tag[activity.tag].append((day.date, activity))
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Por Tags"
+
+    col_widths = [16, 18, 12, 50]
+    for i, w in enumerate(col_widths, 1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+
+    # Header
+    ws.row_dimensions[1].height = 22
+    headers = ["Tag", "Fecha de liberación", "Ticket #", "Título del ticket"]
+    for col, h in enumerate(headers, 1):
+        cell = ws.cell(row=1, column=col, value=h)
+        cell.fill = fill(C_HEADER_BG)
+        cell.font = font(bold=True, color=C_HEADER_FG, size=10)
+        cell.alignment = align(h="center", v="center", wrap=False)
+
+    # Ordenar tags alfabéticamente (prod-x.y.z ordena bien por string)
+    for tag_name in sorted(by_tag.keys()):
+        entries = by_tag[tag_name]
+        # Fecha de liberación = la fecha más reciente entre las actividades del tag
+        release_date = max(date_str for date_str, _ in entries)
+        d = date_type.fromisoformat(release_date)
+        release_label = f"{d.day:02d}/{d.month:02d}/{d.year}"
+
+        for _, activity in entries:
+            r = ws.max_row + 1
+            ws.row_dimensions[r].height = 18
+            ticket_val = activity.fd_ticket or ""
+            title_val = f"{activity.ticket} - {activity.activity}" if activity.ticket else activity.activity
+
+            data = [tag_name, release_label, ticket_val, title_val]
+            for col, val in enumerate(data, 1):
+                cell = ws.cell(row=r, column=col, value=val)
+                cell.fill = fill(C_WHITE)
+                cell.font = font(size=10)
+                cell.alignment = align(h="left", v="center", wrap=False)
 
     buf = io.BytesIO()
     wb.save(buf)

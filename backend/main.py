@@ -8,8 +8,9 @@ from routers.saved_reports import router as saved_reports_router
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     try:
-        from database import create_tables
+        from database import create_tables, migrate_tables
         create_tables()
+        migrate_tables()
     except Exception as e:
         print(f"[DB] No se pudo conectar a la base de datos: {e}")
     yield

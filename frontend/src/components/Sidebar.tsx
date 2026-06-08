@@ -26,7 +26,16 @@ export function Sidebar({ view, repoPath, year, month, author, loading, onViewCh
   const [customPath, setCustomPath] = useState("")
 
   useEffect(() => {
-    fetchRepos().then(setRepos).catch(() => {})
+    let cancelled = false
+    const tryFetch = (attempts: number) => {
+      fetchRepos()
+        .then((data) => { if (!cancelled) setRepos(data) })
+        .catch(() => {
+          if (!cancelled && attempts > 0) setTimeout(() => tryFetch(attempts - 1), 1500)
+        })
+    }
+    tryFetch(8)
+    return () => { cancelled = true }
   }, [])
 
   const years = Array.from({ length: 5 }, (_, i) => new Date().getFullYear() - 2 + i)
@@ -73,7 +82,10 @@ export function Sidebar({ view, repoPath, year, month, author, loading, onViewCh
                 <select
                   className="w-full bg-slate-700 text-slate-100 rounded px-3 py-2 text-sm mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={repoPath}
-                  onChange={(e) => onChange("repoPath", e.target.value)}
+                  onChange={(e) => {
+                    setCustomPath(e.target.value)
+                    onChange("repoPath", e.target.value)
+                  }}
                 >
                   <option value="">— Seleccionar —</option>
                   {repos.map((r) => (

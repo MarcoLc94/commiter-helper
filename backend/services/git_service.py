@@ -46,6 +46,28 @@ def parse_commit(message: str, author: str) -> Activity:
     )
 
 
+def get_tag_map(repo_path: str) -> dict[str, str]:
+    """Mapea subject del commit → primer tag que lo introdujo."""
+    tags_res = subprocess.run(
+        ["git", "-C", repo_path, "tag", "--sort=version:refname"],
+        capture_output=True, text=True
+    )
+    tags = [t.strip() for t in tags_res.stdout.splitlines() if t.strip()]
+    if not tags:
+        return {}
+
+    tag_map: dict[str, str] = {}
+    for i, tag in enumerate(tags):
+        cmd = ["git", "-C", repo_path, "log", "--format=%s", "--no-merges"]
+        cmd += [f"{tags[i - 1]}..{tag}"] if i > 0 else [tag]
+        res = subprocess.run(cmd, capture_output=True, text=True)
+        for subject in res.stdout.splitlines():
+            s = subject.strip()
+            if s and s not in tag_map:
+                tag_map[s] = tag
+    return tag_map
+
+
 def get_commits_by_date(repo_path: str, start: date, end: date, author_filter: str) -> dict:
     cmd = [
         "git", "-C", repo_path, "log",
@@ -59,7 +81,8 @@ def get_commits_by_date(repo_path: str, start: date, end: date, author_filter: s
         cmd += [f"--author={author_filter}"]
 
     result = subprocess.run(cmd, capture_output=True, text=True)
-    by_date: dict[str, list[Activity]] = defaultdict(list)
+    # Retorna tuplas (subject_original, Activity) para poder hacer lookup de tag
+    by_date: dict[str, list[tuple[str, Activity]]] = defaultdict(list)
 
     for line in result.stdout.splitlines():
         if not line.strip():
@@ -68,12 +91,13 @@ def get_commits_by_date(repo_path: str, start: date, end: date, author_filter: s
         if len(parts) < 3:
             continue
         author_name, commit_date, message = parts
-        by_date[commit_date].append(parse_commit(message, author_name))
+        by_date[commit_date].append((message.strip(), parse_commit(message, author_name)))
 
     return by_date
 
 
 def build_report_days(repo_path: str, start: date, end: date, author_filter: str) -> list[dict]:
+    tag_map = get_tag_map(repo_path)
     commits_by_date = get_commits_by_date(repo_path, start, end, author_filter)
 
     days = []
@@ -91,9 +115,10 @@ def build_report_days(repo_path: str, start: date, end: date, author_filter: str
             raw = commits_by_date.get(current.isoformat(), [])
             hours_list = distribute_hours(len(raw))
             activities = []
-            for activity, hours in zip(raw, hours_list):
+            for (subject, activity), hours in zip(raw, hours_list):
                 d = activity.model_dump()
                 d["hours"] = hours
+                d["tag"] = tag_map.get(subject) or None
                 activities.append(d)
 
         total = sum(a["hours"] for a in activities)
