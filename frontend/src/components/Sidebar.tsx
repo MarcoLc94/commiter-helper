@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import type { Repo } from "../types"
-import { fetchRepos } from "../api/client"
+import { fetchRepos, fetchBranches } from "../api/client"
 
 const MONTHS_ES = [
   "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
@@ -12,6 +12,7 @@ type View = "generator" | "history"
 interface Props {
   view: View
   repoPath: string
+  branch: string
   year: number
   month: number
   author: string
@@ -21,8 +22,9 @@ interface Props {
   onGenerate: () => void
 }
 
-export function Sidebar({ view, repoPath, year, month, author, loading, onViewChange, onChange, onGenerate }: Props) {
+export function Sidebar({ view, repoPath, branch, year, month, author, loading, onViewChange, onChange, onGenerate }: Props) {
   const [repos, setRepos] = useState<Repo[]>([])
+  const [branches, setBranches] = useState<string[]>([])
   const [customPath, setCustomPath] = useState("")
 
   useEffect(() => {
@@ -37,6 +39,13 @@ export function Sidebar({ view, repoPath, year, month, author, loading, onViewCh
     tryFetch(8)
     return () => { cancelled = true }
   }, [])
+
+  useEffect(() => {
+    if (!repoPath) { setBranches([]); return }
+    fetchBranches(repoPath)
+      .then(setBranches)
+      .catch(() => setBranches([]))
+  }, [repoPath])
 
   const years = Array.from({ length: 5 }, (_, i) => new Date().getFullYear() - 2 + i)
 
@@ -85,6 +94,7 @@ export function Sidebar({ view, repoPath, year, month, author, loading, onViewCh
                   onChange={(e) => {
                     setCustomPath(e.target.value)
                     onChange("repoPath", e.target.value)
+                    onChange("branch", "")
                   }}
                 >
                   <option value="">— Seleccionar —</option>
@@ -101,9 +111,28 @@ export function Sidebar({ view, repoPath, year, month, author, loading, onViewCh
                 onChange={(e) => {
                   setCustomPath(e.target.value)
                   onChange("repoPath", e.target.value)
+                  onChange("branch", "")
                 }}
               />
             </div>
+
+            {branches.length > 0 && (
+              <div>
+                <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">
+                  Rama
+                </label>
+                <select
+                  className="w-full bg-slate-700 text-slate-100 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={branch}
+                  onChange={(e) => onChange("branch", e.target.value)}
+                >
+                  <option value="">— Todas las ramas —</option>
+                  {branches.map((b) => (
+                    <option key={b} value={b}>{b}</option>
+                  ))}
+                </select>
+              </div>
+            )}
 
             <div>
               <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-1">

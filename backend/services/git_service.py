@@ -68,7 +68,25 @@ def get_tag_map(repo_path: str) -> dict[str, str]:
     return tag_map
 
 
-def get_commits_by_date(repo_path: str, start: date, end: date, author_filter: str) -> dict:
+def get_branches(repo_path: str) -> list[str]:
+    local_res = subprocess.run(
+        ["git", "-C", repo_path, "branch", "--format=%(refname:short)"],
+        capture_output=True, text=True
+    )
+    local = [b.strip() for b in local_res.stdout.splitlines() if b.strip()]
+
+    remote_res = subprocess.run(
+        ["git", "-C", repo_path, "branch", "-r", "--format=%(refname:short)"],
+        capture_output=True, text=True
+    )
+    remote_raw = [b.strip() for b in remote_res.stdout.splitlines() if b.strip() and not b.strip().endswith("/HEAD")]
+    local_set = set(local)
+    remote = [b for b in remote_raw if b.split("/", 1)[-1] not in local_set]
+
+    return local + remote
+
+
+def get_commits_by_date(repo_path: str, start: date, end: date, author_filter: str, branch: str = "") -> dict:
     cmd = [
         "git", "-C", repo_path, "log",
         f"--after={start.isoformat()} 00:00:00",
@@ -79,6 +97,8 @@ def get_commits_by_date(repo_path: str, start: date, end: date, author_filter: s
     ]
     if author_filter:
         cmd += [f"--author={author_filter}"]
+    if branch:
+        cmd += [branch]
 
     result = subprocess.run(cmd, capture_output=True, text=True)
     # Retorna tuplas (subject_original, Activity) para poder hacer lookup de tag
@@ -96,9 +116,9 @@ def get_commits_by_date(repo_path: str, start: date, end: date, author_filter: s
     return by_date
 
 
-def build_report_days(repo_path: str, start: date, end: date, author_filter: str) -> list[dict]:
+def build_report_days(repo_path: str, start: date, end: date, author_filter: str, branch: str = "") -> list[dict]:
     tag_map = get_tag_map(repo_path)
-    commits_by_date = get_commits_by_date(repo_path, start, end, author_filter)
+    commits_by_date = get_commits_by_date(repo_path, start, end, author_filter, branch)
 
     days = []
     current = start

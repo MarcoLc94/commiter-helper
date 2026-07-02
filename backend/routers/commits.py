@@ -3,7 +3,7 @@ import os
 from datetime import date
 from fastapi import APIRouter, Query
 from fastapi.responses import StreamingResponse
-from services.git_service import build_report_days
+from services.git_service import build_report_days, get_branches
 from services.excel_service import generate_excel, generate_excel_v2
 from models import ReportRequest
 
@@ -34,17 +34,23 @@ def find_repos():
     return sorted(repos, key=lambda r: r["name"].lower())
 
 
+@router.get("/branches")
+def get_repo_branches(repo_path: str = Query(...)):
+    return get_branches(repo_path)
+
+
 @router.get("/commits")
 def get_commits(
     repo_path: str = Query(...),
     year: int = Query(...),
     month: int = Query(...),
     author: str = Query(default=""),
+    branch: str = Query(default=""),
 ):
     _, last_day = calendar.monthrange(year, month)
     start = date(year, month, 1)
     end = date(year, month, last_day)
-    return build_report_days(repo_path, start, end, author)
+    return build_report_days(repo_path, start, end, author, branch)
 
 
 @router.post("/export")

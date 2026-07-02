@@ -8,17 +8,26 @@ export async function fetchRepos(): Promise<Repo[]> {
   return res.json()
 }
 
+export async function fetchBranches(repoPath: string): Promise<string[]> {
+  const params = new URLSearchParams({ repo_path: repoPath })
+  const res = await fetch(`${BASE}/branches?${params}`)
+  if (!res.ok) throw new Error("Error al cargar ramas")
+  return res.json()
+}
+
 export async function fetchCommits(
   repoPath: string,
   year: number,
   month: number,
-  author: string
+  author: string,
+  branch: string = ""
 ): Promise<DayReport[]> {
   const params = new URLSearchParams({
     repo_path: repoPath,
     year: String(year),
     month: String(month),
     author,
+    branch,
   })
   const res = await fetch(`${BASE}/commits?${params}`)
   if (!res.ok) throw new Error("Error al leer commits")

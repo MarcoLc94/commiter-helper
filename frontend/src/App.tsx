@@ -27,6 +27,7 @@ export default function App() {
   const [view, setView] = useState<View>("generator")
   const [config, setConfig] = useState({
     repoPath: "",
+    branch: "",
     year: now.getFullYear(),
     month: now.getMonth() + 1,
     author: "marco",
@@ -55,7 +56,7 @@ export default function App() {
     setLoading(true)
     setError("")
     try {
-      const freshData = await fetchCommits(config.repoPath, config.year, config.month, config.author)
+      const freshData = await fetchCommits(config.repoPath, config.year, config.month, config.author, config.branch)
 
       if (loadedReport && days.length > 0) {
         // Smart merge: sólo reemplazar días que el usuario apruebe
@@ -223,6 +224,7 @@ export default function App() {
       <Sidebar
         view={view}
         repoPath={config.repoPath}
+        branch={config.branch}
         year={config.year}
         month={config.month}
         author={config.author}
